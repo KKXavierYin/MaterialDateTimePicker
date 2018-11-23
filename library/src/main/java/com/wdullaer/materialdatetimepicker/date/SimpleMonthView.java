@@ -46,11 +46,26 @@ public class SimpleMonthView extends MonthView {
         // gray out the day number if it's outside the range.
         if (mController.isOutOfRange(year, month, day)) {
             mMonthNumPaint.setColor(mDisabledDayTextColor);
+            mMonthNumSlashPaint.setColor(mDisabledDayTextColor);
             canvas.drawLine(
-                    x - MINI_DAY_NUMBER_TEXT_SIZE,
+                    x - MINI_DAY_NUMBER_TEXT_SIZE / 2,
+                    y - MINI_DAY_NUMBER_TEXT_SIZE / 3 - 1,
+                    x + MINI_DAY_NUMBER_TEXT_SIZE / 2,
+                    y - MINI_DAY_NUMBER_TEXT_SIZE / 3 - 1,
+                    mMonthNumSlashPaint
+            );
+            canvas.drawLine(
+                    x - MINI_DAY_NUMBER_TEXT_SIZE / 2,
                     y - MINI_DAY_NUMBER_TEXT_SIZE / 3,
-                    x + MINI_DAY_NUMBER_TEXT_SIZE,
+                    x + MINI_DAY_NUMBER_TEXT_SIZE / 2,
                     y - MINI_DAY_NUMBER_TEXT_SIZE / 3,
+                    mMonthNumSlashPaint
+            );
+            canvas.drawLine(
+                    x - MINI_DAY_NUMBER_TEXT_SIZE / 2,
+                    y - MINI_DAY_NUMBER_TEXT_SIZE / 3 + 1,
+                    x + MINI_DAY_NUMBER_TEXT_SIZE / 2,
+                    y - MINI_DAY_NUMBER_TEXT_SIZE / 3 + 1,
                     mMonthNumSlashPaint
             );
         } else if (mSelectedDay == day) {
