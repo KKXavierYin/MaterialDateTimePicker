@@ -81,6 +81,7 @@ public abstract class MonthView extends View {
     private String mMonthTitleTypeface;
 
     protected Paint mMonthNumPaint;
+    protected Paint mMonthNumSlashPaint;
     protected Paint mMonthTitlePaint;
     protected Paint mSelectedCirclePaint;
     protected Paint mMonthDayLabelPaint;
@@ -271,6 +272,12 @@ public abstract class MonthView extends View {
         mMonthNumPaint.setStyle(Style.FILL);
         mMonthNumPaint.setTextAlign(Align.CENTER);
         mMonthNumPaint.setFakeBoldText(false);
+
+        mMonthNumSlashPaint = new Paint();
+        mMonthNumPaint.setAntiAlias(true);
+        mMonthNumPaint.setTextSize(MINI_DAY_NUMBER_TEXT_SIZE);
+        mMonthNumPaint.setStyle(Style.FILL_AND_STROKE);
+        mMonthNumPaint.setTextAlign(Align.CENTER);
     }
 
     @Override
